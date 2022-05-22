@@ -20,9 +20,9 @@ func _physics_process(delta):
 	var direction = Vector3.ZERO;
 	
 	if Input.is_action_pressed("ui_up"):
-		direction.x += 1;
-	if Input.is_action_pressed("ui_down"):
 		direction.x -= 1;
+	if Input.is_action_pressed("ui_down"):
+		direction.x += 1;
 	if Input.is_action_pressed("ui_left"):
 		direction.z += 1;
 	if Input.is_action_pressed("ui_right"):
@@ -35,7 +35,7 @@ func _physics_process(delta):
 	velocity.x = direction.x * speed;
 	velocity.z = direction.z * speed;
 	
-	velocity.y -= fall_aceleration * delta;
+	#velocity.y -= fall_aceleration * delta;
 	
 	velocity = move_and_slide(velocity, Vector3.UP);
 
